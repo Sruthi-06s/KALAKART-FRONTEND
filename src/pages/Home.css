@@ -1,0 +1,570 @@
+/* Home.css - Complete styles for KalaKart Home page */
+
+/* Loading State */
+.home-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f0f0f0;
+  border-top-color: #b45f3a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #faf3e0 0%, #f7e6d5 100%);
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #2c1810;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-highlight {
+  color: #b45f3a;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(180, 95, 58, 0.2);
+  z-index: -1;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #b45f3a;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.hero-btn:hover {
+  background: #8e4b2e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(180, 95, 58, 0.3);
+}
+
+/* ===== UPDATED STATS SECTION WITH GOLD NUMBERS ===== */
+.hero-stats {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+  min-width: 100px;
+}
+
+.stat-number {
+  display: block !important;
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+  
+  /* Strong Gold Gradient */
+  background: linear-gradient(
+    135deg,
+    #d4af37 0%,
+    #ffd700 30%,
+    #f5e7a3 50%,
+    #d4af37 70%,
+    #b8860b 100%
+  ) !important;
+  
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  
+  /* Strong text shadow for depth */
+  text-shadow: 
+    0 2px 5px rgba(212, 175, 55, 0.3),
+    0 4px 10px rgba(212, 175, 55, 0.2),
+    0 8px 15px rgba(212, 175, 55, 0.1) !important;
+  
+  animation: goldShine 4s ease-in-out infinite;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* Gold underline */
+.stat-number::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, #ffd700, #d4af37);
+  border-radius: 3px;
+  box-shadow: 0 0 10px #d4af37;
+}
+
+.stat-label {
+  display: block !important;
+  color: #4a3a2a !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  margin-top: 0.8rem !important;
+}
+
+/* Gold Shine Animation */
+@keyframes goldShine {
+  0% {
+    background-position: 0% 50%;
+    text-shadow: 
+      0 2px 5px rgba(212, 175, 55, 0.3),
+      0 4px 10px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    text-shadow: 
+      0 2px 10px rgba(212, 175, 55, 0.6),
+      0 4px 20px rgba(212, 175, 55, 0.4),
+      0 8px 30px rgba(212, 175, 55, 0.2);
+  }
+  100% {
+    background-position: 0% 50%;
+    text-shadow: 
+      0 2px 5px rgba(212, 175, 55, 0.3),
+      0 4px 10px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Hover effect */
+.stat-item:hover .stat-number {
+  animation: goldPulse 1s ease-in-out infinite;
+  filter: brightness(1.2);
+  text-shadow: 
+    0 0 20px #ffd700,
+    0 0 40px #d4af37,
+    0 0 60px #b8860b;
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Search Section */
+.search-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #b45f3a;
+  box-shadow: 0 0 0 3px rgba(180, 95, 58, 0.1);
+}
+
+.search-btn {
+  padding: 1rem 2rem;
+  background: #b45f3a;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-btn:hover {
+  background: #8e4b2e;
+  transform: translateY(-2px);
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c1810;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #b45f3a;
+}
+
+/* States Section */
+.states-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.state-card {
+  position: relative;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.state-card[data-state="TAMIL_NADU"] {
+  background: linear-gradient(135deg, #8B4513, #C41E3A);
+}
+
+.state-card[data-state="RAJASTHAN"] {
+  background: linear-gradient(135deg, #C41E3A, #FF6B35);
+}
+
+.state-card[data-state="KARNATAKA"] {
+  background: linear-gradient(135deg, #228B22, #4A7C59);
+}
+
+.state-card[data-state="JAMMU_KASHMIR"] {
+  background: linear-gradient(135deg, #4169E1, #1E3A8A);
+}
+
+.state-card[data-state="UTTAR_PRADESH"] {
+  background: linear-gradient(135deg, #FF9933, #FF6B35);
+}
+
+.state-card[data-state="WEST_BENGAL"] {
+  background: linear-gradient(135deg, #FF1493, #C71585);
+}
+
+.state-card[data-state="GUJARAT"] {
+  background: linear-gradient(135deg, #FFA500, #FF8C00);
+}
+
+.state-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.state-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.state-card:hover .state-card-overlay {
+  background: rgba(0,0,0,0.3);
+}
+
+.state-name {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.state-count {
+  color: #ffd700;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: rgba(0,0,0,0.5);
+  padding: 0.3rem 1rem;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+/* Featured Products Section */
+.featured-section {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product-image-container {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #2c1810;
+}
+
+.product-category {
+  font-size: 0.8rem;
+  color: #b45f3a;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #b45f3a;
+  margin-bottom: 0.3rem;
+}
+
+.product-state {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: #b45f3a;
+  text-decoration: none;
+  border: 2px solid #b45f3a;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.view-all-btn:hover {
+  background: #b45f3a;
+  color: white;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.category-card {
+  text-decoration: none;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(180, 95, 58, 0.1);
+  border-color: #b45f3a;
+}
+
+.category-name {
+  color: #2c1810;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-count {
+  color: #b45f3a;
+  font-size: 0.9rem;
+}
+/* Add this to your hero section */
+.hero {
+  margin-top: 2rem;  /* Adds space below navbar */
+  /* or */
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-stats {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .states-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .state-card {
+    height: 180px;
+  }
+
+  .state-name {
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .states-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+  
+  .stat-number {
+    font-size: 2rem !important;
+  }
+}
