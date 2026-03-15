@@ -24,7 +24,7 @@ img {
 .product-image-wrapper {
   aspect-ratio: 1/1 !important;
   overflow: hidden !important;
-  height: 140px !important;  /* Fixed smaller height */
+  height: 140px !important;
   width: 100% !important;
 }
 
@@ -59,23 +59,26 @@ img {
   font-weight: 500 !important;
 }
 
+/* ===== INCREASED PRICE FONT SIZE ===== */
 .product-price {
-  font-size: 14px !important;
-  font-weight: bold !important;
+  font-size: 18px !important;  /* Increased from 14px */
+  font-weight: 700 !important;  /* Bolder */
   color: #b45f3a !important;
-  margin: 3px 0 !important;
+  margin: 5px 0 !important;
+  line-height: 1.3 !important;
 }
 
 .add-to-cart-btn {
   width: 100% !important;
-  padding: 6px !important;
-  font-size: 11px !important;
-  margin-top: 3px !important;
-  min-height: 32px !important;
+  padding: 8px !important;  /* Slightly larger padding */
+  font-size: 12px !important;
+  margin-top: 5px !important;
+  min-height: 36px !important;  /* Slightly taller */
   background: #b45f3a !important;
   color: white !important;
   border: none !important;
   border-radius: 4px !important;
+  font-weight: 600 !important;
 }
 
 /* Hide less important stuff on mobile */
@@ -103,17 +106,17 @@ img {
   background: #f8f5f2 !important;
   border: 1px solid #e8ddd5 !important;
   border-radius: 8px !important;
-  padding: 12px 8px !important;
+  padding: 15px 8px !important;  /* More vertical padding */
   text-align: center !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
+  font-size: 15px !important;  /* Slightly larger */
+  font-weight: 600 !important;  /* Bolder */
   color: #2c1810 !important;
   transition: all 0.3s !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  min-height: 80px !important;
+  min-height: 90px !important;  /* Taller cards */
   box-shadow: 0 2px 4px rgba(0,0,0,0.03) !important;
 }
 
@@ -129,11 +132,11 @@ img {
 /* State icons if you have them */
 .state-icon,
 .category-icon {
-  font-size: 24px !important;
-  margin-bottom: 5px !important;
+  font-size: 28px !important;  /* Larger icons */
+  margin-bottom: 8px !important;
 }
 
-/* ===== TABLET (3 columns for products, 3 for states) ===== */
+/* ===== PRICE ON TABLET ===== */
 @media (min-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -142,6 +145,10 @@ img {
   
   .product-image-wrapper {
     height: 180px !important;
+  }
+  
+  .product-price {
+    font-size: 20px !important;  /* Even larger on tablet */
   }
   
   .states-grid,
@@ -157,7 +164,7 @@ img {
   }
 }
 
-/* ===== DESKTOP (4 columns for products, 4 for states) ===== */
+/* ===== PRICE ON DESKTOP ===== */
 @media (min-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr) !important;
@@ -166,6 +173,10 @@ img {
   
   .product-image-wrapper {
     height: 220px !important;
+  }
+  
+  .product-price {
+    font-size: 22px !important;  /* Largest on desktop */
   }
   
   .states-grid,
@@ -177,7 +188,7 @@ img {
   
   .add-to-cart-btn {
     font-size: 14px !important;
-    padding: 8px !important;
+    padding: 10px !important;
   }
 }
 
