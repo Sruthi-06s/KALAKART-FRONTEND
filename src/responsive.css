@@ -1,0 +1,106 @@
+/* ===== ONE FILE TO RULE ALL SCREENS ===== */
+
+/* Base mobile styles (default) */
+html {
+  font-size: 14px;
+}
+
+/* Container padding for all pages */
+.container, 
+.products-page,
+.cart-page,
+.checkout-page,
+.about-page,
+.contact-page {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Make everything responsive */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix grid layouts */
+.products-grid {
+  grid-template-columns: 1fr !important;
+  gap: 1rem !important;
+}
+
+/* Fix flex layouts */
+.nav-container,
+.footer-content,
+.filters-bar {
+  flex-wrap: wrap !important;
+}
+
+/* Make buttons touch-friendly */
+button, .btn, [role="button"] {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+/* Hide desktop-only elements */
+.desktop-only {
+  display: none !important;
+}
+
+/* Show mobile menu */
+.mobile-menu-btn {
+  display: block !important;
+}
+
+/* ===== Tablet Styles ===== */
+@media (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .nav-links {
+    display: flex !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .desktop-only {
+    display: block !important;
+  }
+  
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+/* ===== Desktop Styles ===== */
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+  }
+  
+  .container, 
+  .products-page,
+  .cart-page {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ===== Large Desktop ===== */
+@media (min-width: 1400px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
