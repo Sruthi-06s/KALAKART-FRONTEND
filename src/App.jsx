@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import './responsive.css';  // Add this line at the top with other imports
+// import './responsive.css';  // Add this line at the top with other imports
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
