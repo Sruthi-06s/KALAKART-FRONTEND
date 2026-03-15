@@ -1,4 +1,4 @@
-/* ===== RESPONSIVE CSS - OPTIMIZED FOR MOBILE ===== */
+/* ===== RESPONSIVE CSS - AGGRESSIVE PRICE FIX ===== */
 
 /* Base mobile styles */
 html {
@@ -59,21 +59,34 @@ img {
   font-weight: 500 !important;
 }
 
-/* ===== INCREASED PRICE FONT SIZE ===== */
-.product-price {
-  font-size: 18px !important;  /* Increased from 14px */
-  font-weight: 700 !important;  /* Bolder */
+/* ===== AGGRESSIVE PRICE FIX ===== */
+.product-price,
+.price,
+.card-price,
+.item-price,
+[class*="price"] {
+  font-size: 22px !important;  /* Much bigger */
+  font-weight: 800 !important;  /* Extra bold */
   color: #b45f3a !important;
-  margin: 5px 0 !important;
+  margin: 8px 0 !important;
   line-height: 1.3 !important;
+  display: block !important;
+}
+
+/* Even more specific selectors for your site */
+.products-page .product-price,
+.product-card .product-price,
+.product-footer .product-price {
+  font-size: 22px !important;
+  font-weight: 800 !important;
 }
 
 .add-to-cart-btn {
   width: 100% !important;
-  padding: 8px !important;  /* Slightly larger padding */
+  padding: 8px !important;
   font-size: 12px !important;
   margin-top: 5px !important;
-  min-height: 36px !important;  /* Slightly taller */
+  min-height: 36px !important;
   background: #b45f3a !important;
   color: white !important;
   border: none !important;
@@ -93,7 +106,8 @@ img {
 .states-grid,
 .state-options,
 .category-list,
-.states-section .grid {
+.states-section .grid,
+.states-page .grid {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 10px !important;
@@ -102,21 +116,22 @@ img {
 
 .state-card,
 .state-item,
-.category-card {
+.category-card,
+[class*="state"] {
   background: #f8f5f2 !important;
   border: 1px solid #e8ddd5 !important;
   border-radius: 8px !important;
-  padding: 15px 8px !important;  /* More vertical padding */
+  padding: 15px 8px !important;
   text-align: center !important;
-  font-size: 15px !important;  /* Slightly larger */
-  font-weight: 600 !important;  /* Bolder */
+  font-size: 15px !important;
+  font-weight: 600 !important;
   color: #2c1810 !important;
   transition: all 0.3s !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  min-height: 90px !important;  /* Taller cards */
+  min-height: 90px !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.03) !important;
 }
 
@@ -132,11 +147,11 @@ img {
 /* State icons if you have them */
 .state-icon,
 .category-icon {
-  font-size: 28px !important;  /* Larger icons */
+  font-size: 28px !important;
   margin-bottom: 8px !important;
 }
 
-/* ===== PRICE ON TABLET ===== */
+/* ===== TABLET ===== */
 @media (min-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -147,8 +162,9 @@ img {
     height: 180px !important;
   }
   
-  .product-price {
-    font-size: 20px !important;  /* Even larger on tablet */
+  .product-price,
+  [class*="price"] {
+    font-size: 24px !important;
   }
   
   .states-grid,
@@ -164,7 +180,7 @@ img {
   }
 }
 
-/* ===== PRICE ON DESKTOP ===== */
+/* ===== DESKTOP ===== */
 @media (min-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr) !important;
@@ -175,8 +191,9 @@ img {
     height: 220px !important;
   }
   
-  .product-price {
-    font-size: 22px !important;  /* Largest on desktop */
+  .product-price,
+  [class*="price"] {
+    font-size: 26px !important;
   }
   
   .states-grid,
