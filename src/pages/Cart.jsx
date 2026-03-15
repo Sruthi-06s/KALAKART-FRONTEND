@@ -159,7 +159,8 @@ const Cart = () => {
                   <div className="cart-item-header">
                     <div>
                       <h3>{item.name}</h3>
-                      <p className="item-artisan">By: {item.artisan}</p>
+                      {/* <p className="item-artisan">By: {item.artisan}</p> */}
+                      <p>By: {item.product?.artisan?.name || 'Artisan'}</p>
                       <p className="item-state">{item.state}</p>
                     </div>
                     <button 
