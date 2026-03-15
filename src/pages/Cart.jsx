@@ -160,7 +160,8 @@ const Cart = () => {
                     <div>
                       <h3>{item.name}</h3>
                       {/* <p className="item-artisan">By: {item.artisan}</p> */}
-                      <p>By: {item.product?.artisan?.name || 'Artisan'}</p>
+                      {/* <p>By: {item.product?.artisan?.name || 'Artisan'}</p> */}
+                      <p>By: {item.artisanName || 'Artisan'}</p>
                       <p className="item-state">{item.state}</p>
                     </div>
                     <button 
